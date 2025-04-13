@@ -799,7 +799,26 @@ INSERT INTO "technologies" VALUES ('H2_TRA_FT_GC5','p','H2','Fuel Tech - H2 Deli
 
 --test
 INSERT INTO "technologies" VALUES ('UPS_DMYDMY_BIO','p','UPS','Dummy technology to produce UPS_BIO_DMY','');
-
+CREATE TABLE "tech_mga" (
+	"tech"	text,
+	"notes"	text,
+	PRIMARY KEY("tech")
+);
+CREATE TABLE "tech_imports" (
+	"tech"	text,
+	"notes"	text,
+	PRIMARY KEY("tech")
+);
+CREATE TABLE "tech_exports" (
+	"tech"	text,
+	"notes"	text,
+	PRIMARY KEY("tech")
+);
+CREATE TABLE "tech_domestic" (
+	"tech"	text,
+	"notes"	text,
+	PRIMARY KEY("tech")
+);
 CREATE TABLE "tech_reserve" (
    "tech" text,
    "notes"    text,
@@ -1645,7 +1664,39 @@ INSERT INTO "commodities" VALUES('H2_DT','p','Hydrogen, decentralized production
 -- Dummy - to account for energy-water demand, Temporary
 INSERT INTO "commodities" VALUES('DMY_WAT_OUT','d','Demand commodity to model water-energy demand');
 
-
+CREATE TABLE "commodities_e_moo" (
+	"comm_name"	text,
+	"notes"		text,
+	PRIMARY KEY("comm_name"),
+	FOREIGN KEY("comm_name") REFERENCES "commodities"("comm_name")
+);
+CREATE TABLE "MultiObjectiveSlacked" (
+	"objective_name"		text,
+	"objective_slack"		real,
+	"notes"					text
+);
+CREATE TABLE "EnergyCommodityConcentrationIndex" (
+    "regions"                   text,
+    "comm_name"                 text,
+    "periods"                   integer,
+    "concentration_index"       real,
+    "concentration_index_units" text,
+    "concentration_index_notes" text,
+	PRIMARY KEY("regions","comm_name","periods"),
+	FOREIGN KEY("comm_name") REFERENCES "commodities"("comm_name"),
+	FOREIGN KEY("periods") REFERENCES "time_periods"("t_periods")
+);
+CREATE TABLE "TechnologyMaterialSupplyRisk" (
+	"regions"	        text,
+	"tech"	            text,
+	"vintage"	        integer,
+	"tech_msr"	        real,
+	"tech_msr_units"	text,
+	"tech_msr_notes"	text,
+	PRIMARY KEY("regions","tech","vintage"),
+	FOREIGN KEY("tech") REFERENCES "technologies"("tech"),
+	FOREIGN KEY("vintage") REFERENCES "time_periods"("t_periods")
+);
 CREATE TABLE "TechOutputSplit" (
    "regions"  text,
    "periods"  integer,
@@ -4035,7 +4086,14 @@ INSERT INTO "MaxCapacity" VALUES ('PIE',2012,'TRA_FT_ELC',6.09E+00,'PJ','');
 
 INSERT INTO "MaxCapacity" VALUES ('PIE',2012,'TRA_ROA_CAR_DST_E',2.60E+01,'PJ','');
 
-
+CREATE TABLE "DiscreteCapacity" (
+	"tech"			text,
+	"dsccap"		real,
+	"dsccap_units"	text,
+	"dsccap_notes"	text,
+	PRIMARY KEY("tech"),
+	FOREIGN KEY("tech") REFERENCES "technologies"("tech")
+);
 CREATE TABLE "MaxActivity" (
    "regions"  text,
    "periods"  integer,
@@ -10992,5 +11050,46 @@ CREATE TABLE "Output_VMat_Cons" (
 	FOREIGN KEY("sector") REFERENCES "sector_labels"("sector"),
 	FOREIGN KEY("material_comm") REFERENCES "commodities"("comm_name")
 );
-
+CREATE TABLE "Output_MaterialSupplyRisk" (
+    "regions"   text,
+	"scenario"	text,
+	"t_periods" integer,
+	"materialSR"	real,
+	PRIMARY KEY("regions","scenario","t_periods"),
+	FOREIGN KEY("t_periods") REFERENCES "time_periods"("t_periods"),
+	FOREIGN KEY("regions") REFERENCES "regions"("regions")
+);
+CREATE TABLE "Output_EnergySupplyRisk" (
+    "regions"   text,
+	"scenario"	text,
+	"t_periods" integer,
+	"energySR"	real,
+	PRIMARY KEY("regions","scenario","t_periods"),
+	FOREIGN KEY("t_periods") REFERENCES "time_periods"("t_periods"),
+	FOREIGN KEY("regions") REFERENCES "regions"("regions")
+);
+CREATE TABLE "Output_TotalCosts" (
+    "regions"   text,
+	"scenario"	text,
+	"t_periods" integer,
+	"total_costs"	real,
+	PRIMARY KEY("regions","scenario","t_periods"),
+	FOREIGN KEY("t_periods") REFERENCES "time_periods"("t_periods"),
+	FOREIGN KEY("regions") REFERENCES "regions"("regions")
+);
+CREATE TABLE "Output_TotalEmissions" (
+    "regions"   text,
+	"scenario"	text,
+	"t_periods" integer,
+	"total_emissions"	real,
+	PRIMARY KEY("regions","scenario","t_periods"),
+	FOREIGN KEY("t_periods") REFERENCES "time_periods"("t_periods"),
+	FOREIGN KEY("regions") REFERENCES "regions"("regions")
+);
+CREATE TABLE "Output_VSlack" (
+	"scenario"	text,
+	"moo_f"		text,
+	"slack"		real,
+	PRIMARY KEY("scenario","moo_f")
+);
 COMMIT;
