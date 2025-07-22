@@ -1,9 +1,5 @@
 BEGIN TRANSACTION;
 
---  NOTE: this database contains the BASELINE scenario of the TEMOA_Piedmont Model without comments
---  last modified (28.02.2024)
---  last run (04.02.2025)
-
 CREATE TABLE "time_season" (
    "t_season" text,
    primary key("t_season")
@@ -796,9 +792,8 @@ INSERT INTO "technologies" VALUES ('H2_TRA_FT_GC2','p','H2','Fuel Tech - H2 Deli
 INSERT INTO "technologies" VALUES ('H2_TRA_FT_GC3','p','H2','Fuel Tech - H2 Delivery from centralized production (COMP+TR+DP+REFGG(large))','');
 INSERT INTO "technologies" VALUES ('H2_TRA_FT_GC4','p','H2','Fuel Tech - H2 Delivery from centralized production (COMP+USTOR+TR+GSTORB+RTS+REFGG (small))','');
 INSERT INTO "technologies" VALUES ('H2_TRA_FT_GC5','p','H2','Fuel Tech - H2 Delivery from centralized production (COMP+USTOR+TR+DP+REFGG(large))','');
-
---test
 INSERT INTO "technologies" VALUES ('UPS_DMYDMY_BIO','p','UPS','Dummy technology to produce UPS_BIO_DMY','');
+
 CREATE TABLE "tech_mga" (
 	"tech"	text,
 	"notes"	text,
@@ -824,9 +819,49 @@ CREATE TABLE "tech_reserve" (
    "notes"    text,
    primary key("tech")
 );
+INSERT INTO "tech_reserve" VALUES ('ELC_NGA_CC_E','');
+INSERT INTO "tech_reserve" VALUES ('ELC_NGA_STM_REP_E','');
+INSERT INTO "tech_reserve" VALUES ('ELC_NGA_TURB_E','');
+INSERT INTO "tech_reserve" VALUES ('ELC_CHP_NGA_CC_E','');
+INSERT INTO "tech_reserve" VALUES ('ELC_CHP_NGA_TURB_E','');
+INSERT INTO "tech_reserve" VALUES ('ELC_CHP_NGA_STM_COND_E','');
+INSERT INTO "tech_reserve" VALUES ('ELC_CHP_BMU_E','');
+INSERT INTO "tech_reserve" VALUES ('ELC_CHP_BIO_E','');
+INSERT INTO "tech_reserve" VALUES ('ELC_BGS_E','');
+INSERT INTO "tech_reserve" VALUES ('ELC_BIO_E','');
+INSERT INTO "tech_reserve" VALUES ('ELC_SOL_E','');
+INSERT INTO "tech_reserve" VALUES ('ELC_WIN_E','');
+INSERT INTO "tech_reserve" VALUES ('ELC_HYD_FLO_E','');
+INSERT INTO "tech_reserve" VALUES ('ELC_HYD_RES_E','');
+INSERT INTO "tech_reserve" VALUES ('ELC_HYD_PUM_E','');
+INSERT INTO "tech_reserve" VALUES ('ELC_NGA_CC_P','');
+INSERT INTO "tech_reserve" VALUES ('ELC_CHP_NGA_CC_P','');
+INSERT INTO "tech_reserve" VALUES ('ELC_CHP_NGA_TURB_P','');
+INSERT INTO "tech_reserve" VALUES ('ELC_NGA_TURB_L80MW_N','');
 INSERT INTO "tech_reserve" VALUES ('ELC_WIN_N','');
+INSERT INTO "tech_reserve" VALUES ('ELC_BLQ_N','');
+INSERT INTO "tech_reserve" VALUES ('ELC_BIO_5C_N','');
+INSERT INTO "tech_reserve" VALUES ('ELC_HYD_MICRO_N','');
+INSERT INTO "tech_reserve" VALUES ('ELC_HYD_MINI_N','');
+INSERT INTO "tech_reserve" VALUES ('ELC_BIOGS_AGR_N','');
 INSERT INTO "tech_reserve" VALUES ('ELC_PV_GRO_N','');
 INSERT INTO "tech_reserve" VALUES ('ELC_PV_ROOF_N','');
+INSERT INTO "tech_reserve" VALUES ('ELC_CHP_BMU_N','');
+INSERT INTO "tech_reserve" VALUES ('ELC_CHP_NGA_TURB_N','');
+INSERT INTO "tech_reserve" VALUES ('ELC_CHP_NGA_CC_N','');
+INSERT INTO "tech_reserve" VALUES ('ELC_CHP_NGA_CP_N','');
+INSERT INTO "tech_reserve" VALUES ('ELC_CHP_NGA_TAP_N','');
+INSERT INTO "tech_reserve" VALUES ('RES_CHP_NGA_CI_N','');
+INSERT INTO "tech_reserve" VALUES ('RES_CHP_NGA_MICRO_N','');
+INSERT INTO "tech_reserve" VALUES ('RES_CHP_NGA_CC_N','');
+INSERT INTO "tech_reserve" VALUES ('RES_CHP_NGA_STR_N','');
+INSERT INTO "tech_reserve" VALUES ('COM_CHP_NGA_CI_N','');
+INSERT INTO "tech_reserve" VALUES ('COM_CHP_NGA_MICRO_N','');
+INSERT INTO "tech_reserve" VALUES ('COM_CHP_NGA_CC_N','');
+INSERT INTO "tech_reserve" VALUES ('IND_CHP_NGA_CI_N','');
+INSERT INTO "tech_reserve" VALUES ('IND_CHP_NGA_TG_N','');
+INSERT INTO "tech_reserve" VALUES ('IND_CHP_NGA_TV_N','');
+INSERT INTO "tech_reserve" VALUES ('IND_CHP_BLQ_CI_N','');
 
 CREATE TABLE "tech_exchange" (
    "tech" text,
@@ -2503,7 +2538,7 @@ INSERT INTO "SegFrac" VALUES ('fall','afternoon',5.25E-02,'');
 CREATE TABLE "PlanningReserveMargin" (
    "regions"  text,
    "reserve_margin"   real,
-   primary key(regions),
+   primary key("regions"),
    foreign key("regions") references regions
 );
 
@@ -8818,7 +8853,6 @@ CREATE TABLE "CostVariable" (
    foreign key("vintage") references "time_periods"("t_periods"),
    foreign key("periods") references "time_periods"("t_periods")
 );
-
 -- Transport sector
 -- Fuel technologies
 
@@ -9084,6 +9118,18 @@ INSERT INTO "CostVariable" VALUES ('PIE',2020,'H2_TRA_FT_GC4',2020,0.2,'M€/PJ'
 INSERT INTO "CostVariable" VALUES ('PIE',2020,'H2_TRA_FT_GC5',2020,0.5,'M€/PJ','TEMOA_IT');
 INSERT INTO "CostVariable" VALUES ('PIE',2025,'H2_TRA_FT_GC5',2025,0.4,'M€/PJ','TEMOA_IT');
 
+
+CREATE TABLE "CostEmission" (
+    "regions"  text NOT NULL,
+    "periods"  integer NOT NULL,
+    "emis_comm" text NOT NULL,
+    "cost_emission"    real,
+    "cost_emission_units"  text,
+    "cost_emission_notes"  text,
+    FOREIGN KEY("periods") REFERENCES "time_periods"("t_periods"),
+    FOREIGN KEY("emis_comm") REFERENCES "commodities"("comm_name"),
+    PRIMARY KEY("regions","periods","emis_comm")
+);
 
 CREATE TABLE "CostInvest" (
    "regions"  text,
