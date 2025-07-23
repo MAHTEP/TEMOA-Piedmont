@@ -1,4 +1,4 @@
-begin TRANSACTION;
+BEGIN TRANSACTION;
 
 CREATE TABLE "time_season" (
    "t_season" text,
@@ -2633,7 +2633,7 @@ INSERT INTO "TechInputSplit" VALUES ('PIE',2012,'RES_NH_WAT','RES_TAP_E',0.679,'
 INSERT INTO "TechInputSplit" VALUES ('PIE',2012,'ELC_CEN','TRA_FT_ELC',0.92,'');
 INSERT INTO "TechInputSplit" VALUES ('PIE',2012,'ELC_DST','TRA_FT_ELC',0.08,'');
 INSERT INTO "TechInputSplit" VALUES ('PIE',2050,'ELC_CEN','TRA_FT_ELC',0.50,'');
-INSERT INTO "TechInputSplit" VALUES ('PIE',2050,'ELC_DST','TRA_FT_ELC',0.50,'');
+INSERT INTO "TechInputSplit" VALUES ('PIE',2050,'ELC_DST','TRA_FT_ELC',0.00,'');
 
 INSERT INTO "TechInputSplit" VALUES ('PIE',2012,'TRA_DSL','TRA_DSL_BLN',0.85,'TEMOA-Italy');
 INSERT INTO "TechInputSplit" VALUES ('PIE',2050,'TRA_DSL','TRA_DSL_BLN',0.70,'TEMOA-Italy');
@@ -4231,14 +4231,11 @@ INSERT INTO "MinActivityGroup" VALUES ('PIE',2013,'RES_FT_LPG_GRP',0.90*3.46E+00
 INSERT INTO "MinActivityGroup" VALUES ('PIE',2017,'RES_FT_LPG_GRP',1.05*3.38E+00,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('PIE',2023,'RES_FT_LPG_GRP',4.26E+00,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('PIE',2025,'RES_FT_LPG_GRP',4.26E+00,'PJ');
-INSERT INTO "MinActivityGroup" VALUES ('PIE',2050,'RES_FT_LPG_GRP',4.26E+00,'PJ');
+INSERT INTO "MinActivityGroup" VALUES ('PIE',2050,'RES_FT_LPG_GRP',0.00,'PJ');
 
 INSERT INTO "MinActivityGroup" VALUES ('PIE',2012,'RES_FT_BIO_GRP',0.98*2.63E+01,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('PIE',2014,'RES_FT_BIO_GRP',0.95*2.45E+01,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('PIE',2021,'RES_FT_BIO_GRP',2.73E+01,'PJ');
-INSERT INTO "MinActivityGroup" VALUES ('PIE',2023,'RES_FT_BIO_GRP',2.73E+01,'PJ');
-INSERT INTO "MinActivityGroup" VALUES ('PIE',2025,'RES_FT_BIO_GRP',2.73E+01,'PJ');
-INSERT INTO "MinActivityGroup" VALUES ('PIE',2030,'RES_FT_BIO_GRP',2.73E+01,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('PIE',2050,'RES_FT_BIO_GRP',2.73E+01,'PJ');
 
 INSERT INTO "MinActivityGroup" VALUES ('PIE',2020,'RES_FT_DST_GRP',1.44E+00,'PJ');
@@ -4252,7 +4249,7 @@ INSERT INTO "MinActivityGroup" VALUES ('PIE',2020,'RES_FT_NGA_GRP',1.01*6.37E+01
 INSERT INTO "MinActivityGroup" VALUES ('PIE',2021,'RES_FT_NGA_GRP',6.88E+01,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('PIE',2023,'RES_FT_NGA_GRP',1.01*68.8,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('PIE',2025,'RES_FT_NGA_GRP',1.01*68.8,'PJ');
-INSERT INTO "MinActivityGroup" VALUES ('PIE',2050,'RES_FT_NGA_GRP',1.01*68.7635,'PJ');
+INSERT INTO "MinActivityGroup" VALUES ('PIE',2050,'RES_FT_NGA_GRP',0.00,'PJ');
 
 INSERT INTO "MinActivityGroup" VALUES ('PIE',2012,'RES_FT_ELC_GRP',1.77E+01,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('PIE',2013,'RES_FT_ELC_GRP',1.72E+01,'PJ');
@@ -4316,13 +4313,13 @@ INSERT INTO "MinActivityGroup" VALUES ('PIE',2015,'IND_FT_NGA_GRP',0.98*4.14E+01
 INSERT INTO "MinActivityGroup" VALUES ('PIE',2017,'IND_FT_NGA_GRP',0.98*5.10E+01,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('PIE',2020,'IND_FT_NGA_GRP',0.99*4.40E+01,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('PIE',2021,'IND_FT_NGA_GRP',0.99*4.73E+01,'PJ');
+INSERT INTO "MinActivityGroup" VALUES ('PIE',2050,'IND_FT_NGA_GRP',0.00,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('PIE',2013,'IND_FT_LPG_GRP',0.95*4.95E-01,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('PIE',2014,'IND_FT_LPG_GRP',0.95*4.28E-01,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('PIE',2017,'IND_FT_LPG_GRP',0.97*4.83E-01,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('PIE',2019,'IND_FT_LPG_GRP',0.97*4.78E-01,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('PIE',2020,'IND_FT_LPG_GRP',0.97*5.70E-01,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('PIE',2021,'IND_FT_LPG_GRP',0.97*6.09E-01,'PJ');
-INSERT INTO "MinActivityGroup" VALUES ('PIE',2050,'IND_FT_NGA_GRP',0.00,'PJ');
 
 
 
@@ -4474,13 +4471,16 @@ INSERT INTO "MinActivity" VALUES ('PIE',2012,'UPS_WAT_SPR',0.80*1.58E+01,'Mm3','
 --Agriculture sector
 INSERT INTO "MinActivity" VALUES ('PIE',2020,'AGR_FT_LPG_E',0.98*5.70E-01,'PJ','');
 INSERT INTO "MinActivity" VALUES ('PIE',2021,'AGR_FT_NGA_E',0.98*2.75E+01,'PJ','');
+INSERT INTO "MinActivity" VALUES ('PIE',2050,'AGR_FT_NGA_E',0.00,'PJ','');
 INSERT INTO "MinActivity" VALUES ('PIE',2021,'AGR_FT_LPG_E',0.98*6.09E-01,'PJ','');
+INSERT INTO "MinActivity" VALUES ('PIE',2050,'AGR_FT_LPG_E',0.00,'PJ','');
 INSERT INTO "MinActivity" VALUES ('PIE',2012,'AGR_FT_ELC_E',1.19E+00,'PJ','');
 INSERT INTO "MinActivity" VALUES ('PIE',2015,'AGR_FT_ELC_E',1.26E+00,'PJ','');
 INSERT INTO "MinActivity" VALUES ('PIE',2020,'AGR_FT_ELC_E',1.37E+00,'PJ','');
 INSERT INTO "MinActivity" VALUES ('PIE',2021,'AGR_FT_ELC_E',1.62E+00,'PJ','');
 INSERT INTO "MinActivity" VALUES ('PIE',2023,'AGR_FT_ELC_E',1.08*1.62E+00,'PJ','');
 INSERT INTO "MinActivity" VALUES ('PIE',2021,'AGR_FT_DST_E',0.98*4.17E+00,'PJ','');
+INSERT INTO "MinActivity" VALUES ('PIE',2050,'AGR_FT_DST_E',0.00,'PJ','');
 
 ---- Upstream sector
 INSERT INTO "MinActivity" VALUES ('PIE',2020,'UPS_IMP_OIL_PTC',0.10*24.93,'PJ','10% of TEMOA_IT');
@@ -4562,7 +4562,9 @@ INSERT INTO "MinActivity" VALUES ('PIE',2019,'COM_FT_ELC_EN',0.98*2.67E+01,'PJ',
 INSERT INTO "MinActivity" VALUES ('PIE',2017,'COM_FT_LPG_EN',0.98*4.83E-01,'PJ','');
 INSERT INTO "MinActivity" VALUES ('PIE',2019,'COM_FT_LPG_EN',0.98*4.78E-01,'PJ','');
 INSERT INTO "MinActivity" VALUES ('PIE',2020,'COM_FT_LPG_EN',0.98*5.70E-01,'PJ','');
+INSERT INTO "MinActivity" VALUES ('PIE',2050,'COM_FT_LPG_EN',0.00,'PJ','');
 INSERT INTO "MinActivity" VALUES ('PIE',2021,'COM_FT_NGA_N',0.98*5.39E+00,'PJ','');
+INSERT INTO "MinActivity" VALUES ('PIE',2050,'COM_FT_NGA_N',0.00,'PJ','');
 INSERT INTO "MinActivity" VALUES ('PIE',2012,'COM_FT_HET_EN',0.90*1.61E+00,'PJ','');
 
 -- Base year technologies
@@ -4913,8 +4915,6 @@ INSERT INTO "MaxCapacity" VALUES ('PIE',2012,'RES_SH_WIN_INS_MC_N',0.00,'PJ','')
 --Transport sector
 INSERT INTO "MaxCapacity" VALUES ('PIE',2030,'TRA_FT_DST_E',0.00E+00,'PJ','');
 INSERT INTO "MaxCapacity" VALUES ('PIE',2035,'TRA_FT_DST_E',0.00E+00,'PJ','');
-INSERT INTO "MaxCapacity" VALUES ('PIE',2012,'TRA_ELC_DIV',4.58E+00,'PJ','');
-INSERT INTO "MaxCapacity" VALUES ('PIE',2012,'TRA_FT_ELC',6.09E+00,'PJ','');
 
 INSERT INTO "MaxCapacity" VALUES ('PIE',2012,'TRA_ROA_CAR_DST_E',2.60E+01,'PJ','');
 
@@ -4968,7 +4968,7 @@ INSERT INTO "MaxActivity" VALUES ('PIE',2050,'TRA_FT_GSL_N',3*2.22E+01,'PJ','3x2
 INSERT INTO "MaxActivity" VALUES ('PIE',2050,'TRA_FT_LPG_N',3*3.94E+00,'PJ','3x2021 value');
 INSERT INTO "MaxActivity" VALUES ('PIE',2050,'TRA_FT_NGA_N',3*9.53E-01,'PJ','3x2021 value');
 INSERT INTO "MaxActivity" VALUES ('PIE',2050,'TRA_FT_DST_N',3*6.25E+01,'PJ','3x2021 value');
-INSERT INTO "MaxActivity" VALUES ('PIE',2050,'TRA_FT_ELC',3*2.51E+00,'PJ','3x 2022 value');
+INSERT INTO "MaxActivity" VALUES ('PIE',2050,'TRA_FT_ELC',100*2.51E+00,'PJ','3x 2022 value');
 
 -- Base year technologies
 INSERT INTO "MaxActivity" VALUES ('PIE',2012,'TRA_ROA_CAR_NGA_E',0.95*2.503E-01,'Bvkm','91.67% of base year');
@@ -6610,8 +6610,6 @@ create TABLE "EmissionLimit" (
 );
 
 
-
-
 create TABLE "EmissionActivity" (
    "regions"  text,
    "emis_comm"    text,
@@ -6770,7 +6768,6 @@ INSERT INTO "EmissionActivity" VALUES ('PIE','UPS_CO2','GAS_NGA','H2_SMR_DS',203
 
 INSERT INTO "EmissionActivity" VALUES ('PIE','UPS_CO2','ELC_CEN','H2_HOPO',2020,'H2_CT',100.6,'kt/PJ','');
 INSERT INTO "EmissionActivity" VALUES ('PIE','UPS_CO2','OIL_HFO','H2_HOPO',2020,'H2_CT',100.6,'kt/PJ','');
-
 
 create TABLE "CommodityEmissionFactor" (
    "input_comm"    text,
@@ -11131,6 +11128,31 @@ CREATE TABLE "CostEmission" (
     PRIMARY KEY("regions","periods","emis_comm")
 );
 
+INSERT INTO "CostEmission" VALUES ('PIE',2012,'ELC_CO2',0.010,'M€/kt','CO2 price due to ETS');
+INSERT INTO "CostEmission" VALUES ('PIE',2020,'ELC_CO2',0.080,'M€/kt','CO2 price due to ETS');
+INSERT INTO "CostEmission" VALUES ('PIE',2030,'ELC_CO2',0.090,'M€/kt','CO2 price due to ETS');
+INSERT INTO "CostEmission" VALUES ('PIE',2050,'ELC_CO2',0.150,'M€/kt','CO2 price due to ETS');
+INSERT INTO "CostEmission" VALUES ('PIE',2012,'IND_CO2',0.010,'M€/kt','CO2 price due to ETS');
+INSERT INTO "CostEmission" VALUES ('PIE',2020,'IND_CO2',0.080,'M€/kt','CO2 price due to ETS');
+INSERT INTO "CostEmission" VALUES ('PIE',2030,'IND_CO2',0.090,'M€/kt','CO2 price due to ETS');
+INSERT INTO "CostEmission" VALUES ('PIE',2050,'IND_CO2',0.150,'M€/kt','CO2 price due to ETS');
+INSERT INTO "CostEmission" VALUES ('PIE',2012,'UPS_CO2',0.010,'M€/kt','CO2 price due to ETS');
+INSERT INTO "CostEmission" VALUES ('PIE',2020,'UPS_CO2',0.080,'M€/kt','CO2 price due to ETS');
+INSERT INTO "CostEmission" VALUES ('PIE',2030,'UPS_CO2',0.090,'M€/kt','CO2 price due to ETS');
+INSERT INTO "CostEmission" VALUES ('PIE',2050,'UPS_CO2',0.150,'M€/kt','CO2 price due to ETS');
+INSERT INTO "CostEmission" VALUES ('PIE',2012,'ELC_CO2_PRC',0.010,'M€/kt','CO2 price due to ETS');
+INSERT INTO "CostEmission" VALUES ('PIE',2020,'ELC_CO2_PRC',0.080,'M€/kt','CO2 price due to ETS');
+INSERT INTO "CostEmission" VALUES ('PIE',2030,'ELC_CO2_PRC',0.090,'M€/kt','CO2 price due to ETS');
+INSERT INTO "CostEmission" VALUES ('PIE',2050,'ELC_CO2_PRC',0.150,'M€/kt','CO2 price due to ETS');
+INSERT INTO "CostEmission" VALUES ('PIE',2012,'IND_CO2_PRC',0.010,'M€/kt','CO2 price due to ETS');
+INSERT INTO "CostEmission" VALUES ('PIE',2020,'IND_CO2_PRC',0.080,'M€/kt','CO2 price due to ETS');
+INSERT INTO "CostEmission" VALUES ('PIE',2030,'IND_CO2_PRC',0.090,'M€/kt','CO2 price due to ETS');
+INSERT INTO "CostEmission" VALUES ('PIE',2050,'IND_CO2_PRC',0.150,'M€/kt','CO2 price due to ETS');
+INSERT INTO "CostEmission" VALUES ('PIE',2012,'UPS_CO2_PRC',0.010,'M€/kt','CO2 price due to ETS');
+INSERT INTO "CostEmission" VALUES ('PIE',2020,'UPS_CO2_PRC',0.080,'M€/kt','CO2 price due to ETS');
+INSERT INTO "CostEmission" VALUES ('PIE',2030,'UPS_CO2_PRC',0.090,'M€/kt','CO2 price due to ETS');
+INSERT INTO "CostEmission" VALUES ('PIE',2050,'UPS_CO2_PRC',0.150,'M€/kt','CO2 price due to ETS');
+
 create TABLE "CostInvest" (
    "regions"  text,
    "tech" text,
@@ -13027,6 +13049,48 @@ create TABLE "Output_VMat_Cons" (
 	FOREIGN KEY("vintage") REFERENCES "time_periods"("t_periods"),
 	FOREIGN KEY("sector") REFERENCES "sector_labels"("sector"),
 	FOREIGN KEY("material_comm") REFERENCES "commodities"("comm_name")
+);
+CREATE TABLE "Output_MaterialSupplyRisk" (
+   "regions"   text,
+	"scenario"	text,
+	"t_periods" integer,
+	"materialSR"	real,
+	PRIMARY KEY("regions","scenario","t_periods"),
+	FOREIGN KEY("t_periods") REFERENCES "time_periods"("t_periods"),
+	FOREIGN KEY("regions") REFERENCES "regions"("regions")
+);
+CREATE TABLE "Output_EnergySupplyRisk" (
+   "regions"   text,
+	"scenario"	text,
+	"t_periods" integer,
+	"energySR"	real,
+	PRIMARY KEY("regions","scenario","t_periods"),
+	FOREIGN KEY("t_periods") REFERENCES "time_periods"("t_periods"),
+	FOREIGN KEY("regions") REFERENCES "regions"("regions")
+);
+CREATE TABLE "Output_TotalCosts" (
+   "regions"   text,
+	"scenario"	text,
+	"t_periods" integer,
+	"total_costs"	real,
+	PRIMARY KEY("regions","scenario","t_periods"),
+	FOREIGN KEY("t_periods") REFERENCES "time_periods"("t_periods"),
+	FOREIGN KEY("regions") REFERENCES "regions"("regions")
+);
+CREATE TABLE "Output_TotalEmissions" (
+   "regions"   text,
+	"scenario"	text,
+	"t_periods" integer,
+	"total_emissions"	real,
+	PRIMARY KEY("regions","scenario","t_periods"),
+	FOREIGN KEY("t_periods") REFERENCES "time_periods"("t_periods"),
+	FOREIGN KEY("regions") REFERENCES "regions"("regions")
+);
+CREATE TABLE "Output_VSlack" (
+	"scenario"	text,
+	"moo_f"		text,
+	"slack"		real,
+	PRIMARY KEY("scenario","moo_f")
 );
 
 commit;
