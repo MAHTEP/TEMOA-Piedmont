@@ -1,7 +1,7 @@
 # **TEMOA-Piedmont**
-TEMOA-Piedmont is a model instance for the optimization of the Piedmont energy system developed within an [extended version](https://github.com/MAHTEP/TEMOA) of the [TEMOA](https://temoacloud.com/) (Tools for Energy Modeling Optimization and Analysis) modeling framework.
+TEMOA-Piedmont is a model instance for the optimization of the Piedmont energy system developed within the [TEMOA](https://temoacloud.com/) (Tools for Energy Modeling Optimization and Analysis) modeling framework.
 
-The model is maintained by the [MAHTEP Group](http://www.mahtep.polito.it/) at [Department of Energy](https://www.denerg.polito.it/en/) of [Politecnico di Torino](https://www.polito.it/en). For any communication related to TEMOA-Italy, please contact [Farzaneh Amir Kavei, Matteo Nicoli and Laura Savoldi](mailto:farzaneh.amirkavei@unito.it;matteo.nicoli@polito.it;laura.savoldi@polito.it).
+The model is maintained by the [MAHTEP Group](http://www.mahtep.polito.it/) at [Department of Energy](https://www.denerg.polito.it/en/) of [Politecnico di Torino](https://www.polito.it/en). For any inquiries concerning TEMOA-Europe, please contact [Laura Savoldi, Valeria di Cosmo and Matteo Nicoli](mailto:laura.savoldi@polito.it;valeria.dicosmo@unito.it;matteo.nicoli@polito.it).
 
 The TEMOA-Piedmont model is a long-term energy planning tool developed to analyze the energy system of the Piedmont region in Italy. Built from scratch within the open-source TEMOA framework, the model provides insights into the regional energy transition, considering the unique characteristics of Piedmont's energy supply and demand [1], [2].
 
