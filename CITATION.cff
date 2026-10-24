@@ -1,0 +1,59 @@
+cff-version: 1.2.0
+title: TEMOA-Piedmont
+message: >-
+  If you use TEMOA-Piedmont in your work, please cite the article
+  listed under "preferred-citation" below.
+type: software
+authors:
+  - given-names: Farzaneh
+    family-names: Amir Kavei
+    email: farzaneh.amirkavei@unito.it
+    affiliation: Università di Torino
+  - given-names: Matteo
+    family-names: Nicoli
+    email: matteo.nicoli@polito.it
+    affiliation: Politecnico di Torino
+  - given-names: Laura
+    family-names: Savoldi
+    email: laura.savoldi@polito.it
+    affiliation: Politecnico di Torino
+  - name: MAHTEP Group, Politecnico di Torino
+    website: 'http://www.mahtep.polito.it/'
+abstract: >-
+  A single-region model instance for long-term energy planning of the
+  Piedmont region (Italy) from 2011 to 2050, developed within an extended
+  version of the TEMOA (Tools for Energy Modeling Optimization and Analysis)
+  modeling framework, in an open-source and open-data environment.
+repository-code: 'https://github.com/MAHTEP/TEMOA-Piedmont'
+url: 'http://www.mahtep.polito.it/'
+license: AGPL-3.0-or-later
+keywords:
+  - energy system optimization
+  - energy planning
+  - regional energy systems
+  - TEMOA
+  - Piedmont
+  - Italy
+  - open source
+preferred-citation:
+  type: article
+  title: >-
+    Enhancing energy transition with open-source regional energy system
+    optimization models: TEMOA-Piedmont
+  authors:
+    - given-names: Farzaneh
+      family-names: Amir Kavei
+    - given-names: Matteo
+      family-names: Nicoli
+    - given-names: Francesco
+      family-names: Quatraro
+    - given-names: Laura
+      family-names: Savoldi
+  journal: Energy Conversion and Management
+  volume: 327
+  number: 119536
+  year: 2025
+  month: 3
+  issn: 0196-8904
+  publisher:
+    name: Elsevier
