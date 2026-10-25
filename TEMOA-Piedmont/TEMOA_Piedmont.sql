@@ -6562,6 +6562,12 @@ INSERT INTO "limit_activity" VALUES('PIE',2012,'ELC_SOL_E','ge',2.66E+00,'PJ',''
 INSERT INTO "limit_activity" VALUES('PIE',2012,'ELC_HYD_FLO_E','ge',1.18E+01,'PJ','');
 INSERT INTO "limit_activity" VALUES('PIE',2012,'ELC_HYD_RES_E','ge',9.18E+00,'PJ','');
 INSERT INTO "limit_activity" VALUES('PIE',2012,'ELC_HYD_PUM_E','ge',1.33E+00,'PJ','');
+INSERT INTO "limit_activity" VALUES('PIE',2013,'ELC_HYD_FLO_E','ge',(2.99E+01/2.53E+01)*1.18E+01,'PJ','TERNA 2013 generation, 2012 value scaled by 2013/2012');
+INSERT INTO "limit_activity" VALUES('PIE',2013,'ELC_HYD_RES_E','ge',(2.99E+01/2.53E+01)*9.18E+00,'PJ','TERNA 2013 generation, 2012 value scaled by 2013/2012');
+INSERT INTO "limit_activity" VALUES('PIE',2013,'ELC_HYD_PUM_E','ge',(2.99E+01/2.53E+01)*1.33E+00,'PJ','TERNA 2013 generation, 2012 value scaled by 2013/2012');
+INSERT INTO "limit_activity" VALUES('PIE',2014,'ELC_HYD_FLO_E','ge',(3.01E+01/2.53E+01)*1.18E+01,'PJ','TERNA 2014 generation, 2012 value scaled by 2014/2012');
+INSERT INTO "limit_activity" VALUES('PIE',2014,'ELC_HYD_RES_E','ge',(3.01E+01/2.53E+01)*9.18E+00,'PJ','TERNA 2014 generation, 2012 value scaled by 2014/2012');
+INSERT INTO "limit_activity" VALUES('PIE',2014,'ELC_HYD_PUM_E','ge',(3.01E+01/2.53E+01)*1.33E+00,'PJ','TERNA 2014 generation, 2012 value scaled by 2014/2012');
 INSERT INTO "limit_activity" VALUES('PIE',2015,'ELC_NGA_CC_E','ge',1.35E+01,'PJ','');
 INSERT INTO "limit_activity" VALUES('PIE',2015,'ELC_NGA_STM_REP_E','ge',1.15E+00,'PJ','');
 INSERT INTO "limit_activity" VALUES('PIE',2015,'ELC_NGA_TURB_E','ge',2.22E-02,'PJ','');
@@ -6926,6 +6932,12 @@ INSERT INTO "limit_activity" VALUES('PIE',2012,'ELC_SOL_E','le',3.04E+00,'PJ',''
 INSERT INTO "limit_activity" VALUES('PIE',2012,'ELC_HYD_FLO_E','le',1.26E+01,'PJ','');
 INSERT INTO "limit_activity" VALUES('PIE',2012,'ELC_HYD_RES_E','le',9.78E+00,'PJ','');
 INSERT INTO "limit_activity" VALUES('PIE',2012,'ELC_HYD_PUM_E','le',1.42E+00,'PJ','');
+INSERT INTO "limit_activity" VALUES('PIE',2013,'ELC_HYD_FLO_E','le',(2.99E+01/2.53E+01)*1.26E+01,'PJ','TERNA 2013 generation, 2012 value scaled by 2013/2012');
+INSERT INTO "limit_activity" VALUES('PIE',2013,'ELC_HYD_RES_E','le',(2.99E+01/2.53E+01)*9.78E+00,'PJ','TERNA 2013 generation, 2012 value scaled by 2013/2012');
+INSERT INTO "limit_activity" VALUES('PIE',2013,'ELC_HYD_PUM_E','le',(2.99E+01/2.53E+01)*1.42E+00,'PJ','TERNA 2013 generation, 2012 value scaled by 2013/2012');
+INSERT INTO "limit_activity" VALUES('PIE',2014,'ELC_HYD_FLO_E','le',(3.01E+01/2.53E+01)*1.26E+01,'PJ','TERNA 2014 generation, 2012 value scaled by 2014/2012');
+INSERT INTO "limit_activity" VALUES('PIE',2014,'ELC_HYD_RES_E','le',(3.01E+01/2.53E+01)*9.78E+00,'PJ','TERNA 2014 generation, 2012 value scaled by 2014/2012');
+INSERT INTO "limit_activity" VALUES('PIE',2014,'ELC_HYD_PUM_E','le',(3.01E+01/2.53E+01)*1.42E+00,'PJ','TERNA 2014 generation, 2012 value scaled by 2014/2012');
 INSERT INTO "limit_activity" VALUES('PIE',2012,'ELC_WIN_E','le',1.05*7.31E-02,'PJ','');
 INSERT INTO "limit_activity" VALUES('PIE',2015,'ELC_NGA_CC_E','le',1.41E+01,'PJ','');
 INSERT INTO "limit_activity" VALUES('PIE',2015,'ELC_NGA_STM_REP_E','le',1.20E+00,'PJ','');
@@ -6985,6 +6997,8 @@ INSERT INTO "limit_activity" VALUES('PIE',2025,'UPS_IMP_COA_OVC','le',0.00,'PJ',
 INSERT INTO "limit_activity" VALUES('PIE',2020,'UPS_IMP_OIL_PTC','le',0.10*30.47,'PJ','10% of TEMOA_IT');
 INSERT INTO "limit_activity" VALUES('PIE',2050,'UPS_IMP_OIL_PTC','le',0.10*30.47,'PJ','10% of TEMOA_IT');
 INSERT INTO "limit_activity" VALUES('PIE',2012,'UPS_RNW_HYD','le',2.68E+01,'PJ','');
+INSERT INTO "limit_activity" VALUES('PIE',2013,'UPS_RNW_HYD','le',1.05*2.99E+01,'PJ','+5% of TERNA statistics');
+INSERT INTO "limit_activity" VALUES('PIE',2014,'UPS_RNW_HYD','le',1.05*3.01E+01,'PJ','+5% of TERNA statistics');
 INSERT INTO "limit_activity" VALUES('PIE',2012,'UPS_RNW_SOL','le',1.61E+01,'PJ','10% of TEMOA_Italy in 2012');
 INSERT INTO "limit_activity" VALUES('PIE',2012,'UPS_RNW_WIN','le',2.33E-01,'PJ','');
 INSERT INTO "limit_activity" VALUES('PIE',2012,'UPS_RNW_SLB','le',18.3,'PJ','10% of TEMOA_Italy in 2012');
@@ -7462,6 +7476,7 @@ INSERT INTO "limit_activity" VALUES('PIE',2015,'ELC_SOL_GRP','le',6.16E+00,NULL,
 INSERT INTO "limit_activity" VALUES('PIE',2017,'ELC_SOL_GRP','le',1000000000.0,NULL,'end of group maximum (data up to 2015)');
 INSERT INTO "limit_activity" VALUES('PIE',2012,'ELC_HYD_GRP','le',2.53E+01,NULL,'PJ');
 INSERT INTO "limit_activity" VALUES('PIE',2013,'ELC_HYD_GRP','le',2.99E+01,NULL,'PJ');
+INSERT INTO "limit_activity" VALUES('PIE',2014,'ELC_HYD_GRP','le',3.01E+01,NULL,'PJ');
 INSERT INTO "limit_activity" VALUES('PIE',2017,'ELC_HYD_GRP','le',2.42E+01,NULL,'PJ');
 INSERT INTO "limit_activity" VALUES('PIE',2019,'ELC_HYD_GRP','le',2.91E+01,NULL,'PJ');
 INSERT INTO "limit_activity" VALUES('PIE',2021,'ELC_HYD_GRP','le',2.29E+01,NULL,'PJ');
